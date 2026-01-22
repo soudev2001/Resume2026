@@ -1,0 +1,117 @@
+{
+  "education": {
+    "UCA": {
+      "name": "Université Côte d'Azur",
+      "logo": "public/assets/img/education/Université_Côte_d'Azur.png",
+      "degree": "Master M2 MBDS",
+      "period": "2024-2025",
+      "location": "Nice, France"
+    },
+    "EMSI": {
+      "name": "École Marocaine des Sciences de l'Ingénieur",
+      "logo": "public/assets/img/education/Ecole_Marocaine_des_Sciences_de_l'ingénieur.png",
+      "degree": "Ingénieur en Informatique",
+      "period": "2020-2023",
+      "location": "Casablanca, Maroc"
+    },
+    "FST": {
+      "name": "Faculté des Sciences et Techniques Mohammedia",
+      "logo": "public/assets/img/education/Faculté_des_Sciences_et_Techniques_Mohammedia_(FST.png",
+      "degree": "Licence Mathématiques Informatique",
+      "period": "2017-2020",
+      "location": "Mohammedia, Maroc"
+    }
+  },
+  "experience": {
+    "Capgemini": {
+      "name": "Capgemini",
+      "logo": "public/assets/img/experience/Capgemini.png",
+      "position": "Ingénieur Étude et Développement",
+      "period": "Mars 2024 - Août 2024",
+      "location": "France",
+      "description": "Développement d'applications d'entreprise"
+    },
+    "OLA_Energy": {
+      "name": "OLA Energy",
+      "logo": "public/assets/img/experience/OLA_Energy.png",
+      "position": "Stagiaire DevOps Engineer",
+      "period": "Avril 2023 - Juin 2023",
+      "location": "Casablanca, Maroc",
+      "description": "Automatisation et DevOps"
+    },
+    "SILIAD": {
+      "name": "SILIAD",
+      "logo": "public/assets/img/experience/SILIAD.png",
+      "position": "Développeur Full Stack",
+      "period": "Juillet 2022 - Septembre 2022",
+      "location": "Casablanca, Maroc",
+      "description": "Développement web full stack"
+    },
+    "ONP": {
+      "name": "ONP - Office National des Pêches",
+      "logo": "public/assets/img/experience/ONP_Office_National_des_Pêches.png",
+      "position": "Développeur Full Stack",
+      "period": "Juillet 2021 - Septembre 2021",
+      "location": "Casablanca, Maroc",
+      "description": "Développement d'applications métier"
+    },
+    "Alami": {
+      "name": "Alami ecom",
+      "logo": "public/assets/img/experience/Alami_ecom.png",
+      "position": "Développeur Full Stack (Freelance)",
+      "period": "Mars 2021 - Juin 2021",
+      "location": "Casablanca, Maroc",
+      "description": "Développement e-commerce"
+    }
+  },
+  "certifications": {
+    "IBM": {
+      "name": "IBM Data Science",
+      "provider": "IBM",
+      "logo": "public/assets/img/certification/IBM.png",
+      "year": "2024"
+    },
+    "Google_Cloud": {
+      "name": "Google Cloud Training",
+      "provider": "Google Cloud",
+      "logo": "public/assets/img/certification/Google_Cloud_Training_Online.png",
+      "year": "2024"
+    },
+    "Certiprof": {
+      "name": "SCRUM Foundation Professional Certificate",
+      "provider": "Certiprof",
+      "logo": "public/assets/img/certification/Certiprof.png",
+      "year": "2023"
+    },
+    "Meta": {
+      "name": "Meta Back-End Developer",
+      "provider": "Meta",
+      "logo": "public/assets/img/certification/Meta.png",
+      "year": "2024"
+    },
+    "Google": {
+      "name": "Google IT Support",
+      "provider": "Google",
+      "logo": "public/assets/img/certification/Google.png",
+      "year": "2023"
+    },
+    "Cisco": {
+      "name": "Cisco Networking Basics",
+      "provider": "Cisco",
+      "logo": "public/assets/img/certification/Cisco.png",
+      "year": "2023"
+    },
+    "Coursera": {
+      "name": "Multiple Coursera Certifications",
+      "provider": "Coursera",
+      "logo": "public/assets/img/certification/Coursera.png",
+      "year": "2022-2024"
+    },
+    "Udemy": {
+      "name": "Multiple Udemy Courses",
+      "provider": "Udemy",
+      "logo": "public/assets/img/certification/Udemy.png",
+      "year": "2021-2024"
+    }
+  }
+}

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration Métadonnées Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #C1272D;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            color: #006233;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #006233;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #C1272D 0%, #006233 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .image-card {
+            background: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(193, 39, 45, 0.2);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+            background: white;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+
+        .image-card h3 {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .image-card p {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 0.25rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .badge-education {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .badge-experience {
+            background: #f3e5f5;
+            color: #7b1fa2;
+        }
+
+        .badge-certification {
+            background: #e8f5e9;
+            color: #388e3c;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            margin: 1rem 0;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #C1272D;
+        }
+
+        #loading {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+
+        .error {
+            background: #ffebee;
+            color: #c62828;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Démonstration Métadonnées Portfolio</h1>
+        <p>Gestionnaire d'images pour éducation, expérience et certifications</p>
+
+        <div id="loading">⏳ Chargement des métadonnées...</div>
+        <div id="error" class="error" style="display:none;"></div>
+
+        <div id="content" style="display:none;">
+            <!-- Statistiques -->
+            <div id="stats"></div>
+
+            <!-- Barre de recherche -->
+            <h2>🔍 Recherche</h2>
+            <input type="text"
+                   id="search"
+                   class="search-box"
+                   placeholder="Rechercher une institution, entreprise ou certification...">
+
+            <!-- Éducation -->
+            <h2>📚 Éducation</h2>
+            <div id="education" class="images-grid"></div>
+
+            <!-- Expérience -->
+            <h2>💼 Expérience Professionnelle</h2>
+            <div id="experience" class="images-grid"></div>
+
+            <!-- Certifications -->
+            <h2>🎓 Certifications</h2>
+            <div id="certifications" class="images-grid"></div>
+        </div>
+    </div>
+
+    <script src="metadata-manager.js"></script>
+    <script>
+        // Initialisation
+        const metadata = new PortfolioMetadata();
+
+        // Fonction pour afficher les statistiques
+        function displayStats(stats) {
+            const statsHTML = `
+                <div class="stats">
+                    <div class="stat-card">
+                        <span class="stat-number">${stats.total}</span>
+                        <span class="stat-label">Images Totales</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">${stats.byCategory.education}</span>
+                        <span class="stat-label">Éducation</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">${stats.byCategory.experience}</span>
+                        <span class="stat-label">Expérience</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">${stats.byCategory.certification}</span>
+                        <span class="stat-label">Certifications</span>
+                    </div>
+                </div>
+            `;
+            document.getElementById('stats').innerHTML = statsHTML;
+        }
+
+        // Fonction pour créer une carte d'image
+        function createImageCard(img) {
+            const badgeClass = `badge-${img.category}`;
+            const name = img.institution || img.company || img.provider;
+            const subtitle = img.degree || img.position || img.certification_name;
+            const period = img.period || img.year;
+
+            return `
+                <div class="image-card">
+                    <img src="${img.url}"
+                         alt="${img.alt}"
+                         onerror="this.src='${img.fallback_url || ''}'">
+                    <h3>${name}</h3>
+                    <p><strong>${subtitle || ''}</strong></p>
+                    <p>${period || ''}</p>
+                    <span class="badge ${badgeClass}">${img.category}</span>
+                </div>
+            `;
+        }
+
+        // Fonction pour afficher les images
+        function displayImages(images, containerId) {
+            const container = document.getElementById(containerId);
+            if (images.length === 0) {
+                container.innerHTML = '<p>Aucune image trouvée</p>';
+                return;
+            }
+            container.innerHTML = images.map(createImageCard).join('');
+        }
+
+        // Fonction de recherche
+        function handleSearch(query) {
+            if (!query.trim()) {
+                // Afficher toutes les images
+                displayImages(metadata.getByCategory('education'), 'education');
+                displayImages(metadata.getByCategory('experience'), 'experience');
+                displayImages(metadata.getByCategory('certification'), 'certifications');
+                return;
+            }
+
+            const results = metadata.search(query);
+
+            // Filtrer par catégorie
+            const eduResults = results.filter(r => r.category === 'education');
+            const expResults = results.filter(r => r.category === 'experience');
+            const certResults = results.filter(r => r.category === 'certification');
+
+            displayImages(eduResults, 'education');
+            displayImages(expResults, 'experience');
+            displayImages(certResults, 'certifications');
+        }
+
+        // Chargement et affichage
+        async function init() {
+            try {
+                await metadata.load();
+
+                // Afficher les stats
+                const stats = metadata.getStats();
+                displayStats(stats);
+
+                // Afficher toutes les images
+                displayImages(metadata.getByCategory('education'), 'education');
+                displayImages(metadata.getByCategory('experience'), 'experience');
+                displayImages(metadata.getByCategory('certification'), 'certifications');
+
+                // Configuration de la recherche
+                document.getElementById('search').addEventListener('input', (e) => {
+                    handleSearch(e.target.value);
+                });
+
+                // Masquer le loading, afficher le contenu
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+
+                console.log('✅ Application initialisée avec succès');
+                console.log('📊 Statistiques:', stats);
+
+            } catch (error) {
+                document.getElementById('loading').style.display = 'none';
+                const errorDiv = document.getElementById('error');
+                errorDiv.textContent = `❌ Erreur: ${error.message}`;
+                errorDiv.style.display = 'block';
+                console.error('Erreur d\'initialisation:', error);
+            }
+        }
+
+        // Lancer l'application
+        init();
+    </script>
+</body>
+</html>

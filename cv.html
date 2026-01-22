@@ -1,0 +1,1722 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soufiane Aniba - CV Professionnel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.2;
+            color: #2c3e50;
+            background: #e0e0e0;
+            font-size: 9px;
+            padding: 20px 0;
+        }
+
+        .container {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 8px 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-photo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.8);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
+        }
+
+        .header-text {
+            flex: 1;
+        }
+
+        .header h1 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 2px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 10px;
+            opacity: 0.95;
+            margin-bottom: 6px;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 10px;
+            background: rgba(255,255,255,0.1);
+            padding: 6px 8px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item i {
+            font-size: 14px;
+            width: 16px;
+            text-align: center;
+        }
+
+        .contact-icon {
+            width: 16px;
+            height: 16px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .contact-item a:hover {
+            opacity: 0.8;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+        }
+
+        .left-column {
+            width: 40%;
+            background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 8px;
+        }
+
+        .right-column {
+            width: 60%;
+            padding: 8px;
+        }
+
+        .section {
+            margin-bottom: 6px;
+        }
+
+        .section-title {
+            font-size: 10px;
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 4px;
+            padding-bottom: 2px;
+            border-bottom: 2px solid #2a5298;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .section-icon {
+            width: 14px;
+            height: 14px;
+            object-fit: contain;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 20px;
+            height: 2px;
+            background: #ffd700;
+        }
+
+        /* Skills */
+        .skill-category {
+            margin-bottom: 4px;
+            background: white;
+            padding: 4px;
+            border-radius: 6px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .skill-category h4 {
+            font-size: 10px;
+            color: #1e3c72;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .skill-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            align-items: flex-start;
+        }
+
+        .tech-item-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .tech-item-wrapper:hover {
+            transform: translateY(-2px);
+        }
+
+        .tech-icon {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .tech-icon:hover {
+            transform: scale(1.15);
+        }
+
+        .tech-label {
+            font-size: 6px;
+            color: #1e3c72;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.1;
+            max-width: 35px;
+            word-wrap: break-word;
+        }
+
+        /* Tooltip Styles - Enhanced */
+        .tech-icon[title]:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 9px;
+            font-weight: 600;
+            white-space: nowrap;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+            animation: tooltipFadeIn 0.2s ease;
+        }
+
+        @keyframes tooltipFadeIn {
+            from { opacity: 0; transform: translateX(-50%) translateY(-5px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+
+        .tech-icon[title]:hover::before {
+            content: '';
+            position: absolute;
+            bottom: 27px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: #2a5298;
+            z-index: 1000;
+        }
+
+        .skill-text[title] {
+            cursor: pointer;
+            position: relative;
+        }
+        .skill-text-yellow {
+            background: linear-gradient(45deg, #d8db22, #fff306);
+            color: #1e3c72;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 7px;
+            font-weight: 500;
+            margin-left: 2px;        }
+
+        .skill-text[title]:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 9px;
+            font-weight: 600;
+            white-space: nowrap;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+            animation: tooltipFadeIn 0.2s ease;
+        }
+
+        .skill-text[title]:hover::before {
+            content: '';
+            position: absolute;
+            bottom: 23px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: #2a5298;
+            z-index: 1000;
+        }
+
+        .skill-text {
+            background: linear-gradient(45deg, #2a5298, #1e3c72);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 7px;
+            font-weight: 500;
+            margin-left: 2px;
+        }
+
+        /* Languages */
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            align-items: center;
+            background: white;
+            padding: 4px 6px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        /* Soft Skills Grid */
+        .soft-skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .soft-skill-item {
+            background: white;
+            padding: 4px 6px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-size: 10px;
+        }
+
+        .language-level {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            border-left: 3px solid #2a5298;
+            position: relative;
+        }
+
+        .experience-header {
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .company-logo {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            border-radius: 4px;
+            background: white;
+            padding: 1px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .job-info {
+            flex: 1;
+        }
+
+        .job-title {
+            font-weight: 700;
+            color: #1e3c72;
+            font-size: 10px;
+            margin-bottom: 1px;
+        }
+
+        .company {
+            color: #2a5298;
+            font-weight: 600;
+            font-size: 9px;
+        }
+
+        .duration {
+            color: #7f8c8d;
+            font-size: 8px;
+            font-style: italic;
+            margin-top: 1px;
+        }
+
+        .job-description {
+            margin-top: 4px;
+        }
+
+        .job-description ul {
+            margin-left: 12px;
+        }
+
+        .job-description li {
+            margin-bottom: 2px;
+            position: relative;
+        }
+
+        .job-description li::marker {
+            color: #2a5298;
+        }
+
+        .tech-stack {
+            margin-top: 4px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px;
+        }
+
+        .tech-tag {
+            background: linear-gradient(45deg, #ecf0f1, #d5dbdb);
+            color: #2c3e50;
+            padding: 2px 5px;
+            border-radius: 8px;
+            font-size: 7px;
+            border: 1px solid #bdc3c7;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .tech-tag:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 4px;
+            background: white;
+            padding: 4px;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .degree {
+            font-weight: 700;
+            color: #1e3c72;
+            font-size: 10px;
+            margin-bottom: 2px;
+        }
+
+        .school {
+            color: #2a5298;
+            font-size: 9px;
+            font-weight: 500;
+        }
+
+        .year {
+            color: #7f8c8d;
+            font-size: 8px;
+            font-style: italic;
+            margin-top: 2px;
+        }
+
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+        }
+
+        .cert-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 6px;
+            font-size: 11px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .cert-item.in-progress {
+            background: linear-gradient(45deg, #fff3cd, #ffeeba);
+        }
+
+        .cert-logo {
+            width: 14px;
+            height: 14px;
+            object-fit: contain;
+        }
+
+        .cert-name {
+            font-size: 7px;
+        }
+
+        .cert-provider {
+            font-weight: 700;
+            color: #2a5298;
+        }
+
+        /* Tech icons in projects */
+        .tech-icon-small {
+            width: 18px;
+            height: 18px;
+            object-fit: contain;
+        }
+
+        /* Tech stack inline with icons */
+        .tech-stack-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 6px;
+            align-items: center;
+        }
+
+        .tech-stack-icons img {
+            width: 16px;
+            height: 16px;
+            object-fit: contain;
+            cursor: help;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .tech-stack-icons img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Tooltips for tech-stack-icons */
+        .tech-stack-icons img[title]:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 9px;
+            font-weight: 600;
+            white-space: nowrap;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+            animation: tooltipFadeIn 0.2s ease;
+        }
+
+        .tech-stack-icons img[title]:hover::before {
+            content: '';
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: #2a5298;
+            z-index: 1000;
+        }
+
+        /* Soft Skills Grid - Compact */
+        .soft-skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 3px;
+        }
+
+        .soft-skill-item {
+            background: white;
+            padding: 2px 4px;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            font-size: 7px;
+            text-align: center;
+        }
+
+        /* Projects Footer Section */
+        .projects-footer {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 6px 10px;
+            color: white;
+        }
+
+        .projects-footer .section-title {
+            color: white;
+            border-bottom-color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+        }
+
+        .project-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 6px;
+            backdrop-filter: blur(10px);
+        }
+
+        .project-card .project-header {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: 4px;
+        }
+
+        .project-card .project-logo {
+            width: 22px;
+            height: 22px;
+            border-radius: 3px;
+            object-fit: contain;
+            background: white;
+            padding: 1px;
+        }
+
+        .project-card .project-title {
+            font-weight: 700;
+            font-size: 8px;
+            color: white;
+        }
+
+        .project-card .project-title a {
+            color: #ffd700;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .project-card .project-title a:hover {
+            color: #ffffff;
+        }
+
+        .project-card .project-desc {
+            font-size: 6px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .project-card .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2px;
+            align-items: center;
+        }
+
+        .project-card .project-tech img {
+            width: 12px;
+            height: 12px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            cursor: help;
+            position: relative;
+        }
+
+        /* Tooltips for project tech images */
+        .project-card .project-tech img[title]:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 8px;
+            font-weight: 600;
+            white-space: nowrap;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+            animation: tooltipFadeIn 0.2s ease;
+        }
+
+        .project-card .project-tech img[title]:hover::before {
+            content: '';
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 4px solid transparent;
+            border-top-color: #2a5298;
+            z-index: 1000;
+        }
+
+        .cloud-badge {
+            background: rgba(255,215,0,0.2);
+            border: 1px solid #ffd700;
+            color: #ffd700;
+            padding: 1px 3px;
+            border-radius: 6px;
+            font-size: 5px;
+            font-weight: 600;
+            cursor: help;
+            position: relative;
+        }
+
+        /* Tooltips for cloud badges */
+        .cloud-badge[title]:hover {
+            background: rgba(255,215,0,0.3);
+        }
+
+        .cloud-badge[title]:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 8px;
+            font-weight: 600;
+            white-space: nowrap;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+            animation: tooltipFadeIn 0.2s ease;
+        }
+
+        .cloud-badge[title]:hover::before {
+            content: '';
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 4px solid transparent;
+            border-top-color: #2a5298;
+            z-index: 1000;
+        }
+
+        /* Profile */
+        .profile-content {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 18px;
+            border-radius: 12px;
+            border-left: 4px solid #ffd700;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        /* Tech Stack Showcase */
+        .tech-showcase {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
+        .tech-showcase h4 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            justify-items: center;
+        }
+
+        .tech-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 8px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .tech-item:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .tech-item img {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+            margin-bottom: 4px;
+        }
+
+        .tech-item span {
+            font-size: 8px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        /* Print Styles */
+        @media print {
+            .container {
+                box-shadow: none;
+                width: 100%;
+                min-height: auto;
+                page-break-inside: avoid;
+                transform: scale(0.95);
+                transform-origin: top left;
+            }
+
+            body {
+                font-size: 8px;
+                line-height: 1.1;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .header .subtitle {
+                font-size: 11px;
+            }
+
+            .header {
+                padding: 8px 15px;
+                page-break-inside: avoid;
+            }
+
+            .profile-photo {
+                width: 60px;
+                height: 60px;
+            }
+
+            .left-column, .right-column {
+                padding: 8px;
+            }
+
+            .section {
+                margin-bottom: 6px;
+                page-break-inside: avoid;
+            }
+
+            .experience-item {
+                margin-bottom: 6px;
+                padding: 6px;
+                page-break-inside: avoid;
+            }
+
+            .skill-category {
+                margin-bottom: 4px;
+                padding: 4px;
+            }
+
+            .tech-stack {
+                margin-top: 6px;
+            }
+
+            .tech-tag {
+                padding: 2px 6px;
+                font-size: 7px;
+                margin-bottom: 2px;
+            }
+
+            .contact-info {
+                gap: 6px;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-item {
+                padding: 4px 6px;
+                font-size: 8px;
+            }
+
+            .header::before {
+                display: none;
+            }
+
+            .tech-icon {
+                width: 16px;
+                height: 16px;
+            }
+
+            .tech-label {
+                font-size: 5px;
+            }
+
+            .tech-item-wrapper {
+                gap: 1px;
+            }
+
+            .company-logo {
+                width: 24px;
+                height: 24px;
+            }
+
+            .job-description ul {
+                margin-left: 12px;
+            }
+
+            .job-description li {
+                margin-bottom: 2px;
+                font-size: 8px;
+            }
+
+            .profile-content {
+                padding: 12px;
+                font-size: 9px;
+                line-height: 1.3;
+            }
+
+            /* Force page breaks appropriately */
+            .main-content {
+                page-break-inside: avoid;
+            }
+
+            .projects-section {
+                page-break-before: auto;
+                page-break-after: auto;
+            }
+        }
+
+        @page {
+            size: A4;
+            margin: 0.5cm;
+        }
+
+        /* PDF-like enhancements */
+        .container {
+            position: relative;
+        }
+
+        /* Print button */
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .print-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+        }
+
+        .print-button svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        @media print {
+            .print-button {
+                display: none;
+            }
+        }
+
+        /* Amélioration des marges pour ressembler au PDF */
+        .section-content {
+            line-height: 1.4;
+        }
+
+        /* Style pour les tech-tags avec tooltips */
+        .tech-tag[title] {
+            cursor: help;
+            position: relative;
+        }
+
+        .tech-tag[title]:hover {
+            background: linear-gradient(45deg, #d5dbdb, #bdc3c7);
+        }
+
+        .tech-tag[title]:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 9px;
+            font-weight: 600;
+            white-space: nowrap;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+            animation: tooltipFadeIn 0.2s ease;
+        }
+
+        .tech-tag[title]:hover::before {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: #2a5298;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Print Button -->
+    <button class="print-button" onclick="window.print()">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+        </svg>
+        Télécharger PDF
+    </button>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <img src="public/assets/myimg.jpg" alt="Soufiane Aniba" class="profile-photo"/>
+                <div class="header-text">
+                    <h1>SOUFIANE ANIBA</h1>
+                    <div class="subtitle">Software Engineer @Capgemini | +100 Projets GitHub | Full Stack & Cloud | CDI & Freelance Ready</div>
+                </div>
+            </div>
+            <div class="contact-info">
+                    <div class="contact-item">
+                        <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email" class="contact-icon"/>
+                        <a href="mailto:soufiane.aniba@capgemini.com">soufiane.aniba@capgemini.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email" class="contact-icon"/>
+                        <a href="mailto:anibasoufiane2001@gmail.com">anibasoufiane2001@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="24" height="24" fill="none"/>
+                            <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1v3.5a1 1 0 01-1 1C7.61 22 2 16.39 2 8.5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z" fill="currentColor"/>
+                        </svg>
+                        <a href="tel:+212656037963">+212-656037963</a>
+                    </div>
+                    <div class="contact-item">
+                        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Location" class="contact-icon"/>
+                        <span>Casablanca, Maroc</span>
+                    </div>
+                    <div class="contact-item">
+                        <!--Linkedin logo  -->
+                        <img src="https://www.cdnlogo.com/logos/l/78/linkedin-icon.svg" alt="LinkedIn" class="contact-icon"/>
+
+                        <a href="https://www.linkedin.com/in/soufiane-aniba/" target="_blank">LinkedIn Profile</a>
+                    </div>
+                    <div class="contact-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="contact-icon"/>
+                        <a href="https://github.com/Soufiane4906" target="_blank">GitHub Portfolio</a>
+                    </div>
+                </div>
+            </div>
+               <div class="main-content">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Education -->
+                <div class="section">
+                    <h3 class="section-title">
+                        Formation
+                    </h3>
+                    <div class="section-content">
+                        <div class="education-item" style="display: flex; align-items: center; gap: 8px;">
+                            <img src="public/assets/img/education/unica.jpg" alt="UCA" style="width: 28px; height: 28px; object-fit: contain; border-radius: 4px;"/>
+                            <div>
+                                <div class="degree">Master M2 - Big Data & Systems Integration <span style="color: #28a745; font-weight: bold; font-size: 8px;">Mention Très Bien</span></div>
+                                <div class="school">École Nationale des Sciences Numériques, Université Côte d'Azur</div>
+                                <div class="year">2024 - 2025</div>
+                            </div>
+                        </div>
+                        <div class="education-item" style="display: flex; align-items: center; gap: 8px;">
+                            <img src="public/assets/img/education/Ecole_Marocaine_des_Sciences_de_l'ingénieur.png" alt="EMSI" style="width: 28px; height: 28px; object-fit: contain; border-radius: 4px;"/>
+                            <div>
+                                <div class="degree">Ingénieur Informatique <span style="color: #28a745; font-weight: bold; font-size: 8px;">Mention Très Bien</span></div>
+                                <div class="school">EMSI Casablanca</div>
+                                <div class="year">2023 - 2025</div>
+                            </div>
+                        </div>
+                        <div class="education-item" style="display: flex; align-items: center; gap: 8px;">
+                            <img src="public/assets/img/education/Faculté_des_Sciences_et_Techniques_Mohammedia_(FST.png" alt="FST" style="width: 28px; height: 28px; object-fit: contain; border-radius: 4px;"/>
+                            <div>
+                                <div class="degree">Licence Informatique & Réseaux <span style="color: #17a2b8; font-weight: bold; font-size: 8px;">Mention Bien</span></div>
+                                <div class="school">FST Mohammedia, Université Hassan II</div>
+                                <div class="year">2020-2023</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="section">
+                    <h3 class="section-title">
+                        Compétences
+                    </h3>
+                    <div class="section-content">
+                        <div class="skill-category">
+                            <h4>Backend</h4>
+                            <div class="skill-icons">
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="tech-icon" title="Java 8/11/17/21 - Programmation orientée objet"/>
+                                    <span class="tech-label">Java</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="tech-icon" title="C# - Développement .NET"/>
+                                    <span class="tech-label">C#</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-icon" title="Python - Scripts et APIs"/>
+                                    <span class="tech-label">Python</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot" class="tech-icon" title="Spring Boot - Framework Java pour microservices"/>
+                                    <span class="tech-label">Spring</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET Core" class="tech-icon" title=".NET Core - Framework Microsoft"/>
+                                    <span class="tech-label">.NET</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" class="tech-icon" title="Express.js - Framework Node.js"/>
+                                    <span class="tech-label">Express</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" class="tech-icon" title="Django - Framework Python"/>
+                                    <span class="tech-label">Django</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="GraphQL" class="tech-icon" title="GraphQL"/>
+                                    <span class="tech-label">GraphQL</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Frontend</h4>
+                            <div class="skill-icons">
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="tech-icon" title="React.js - Framework frontend principal"/>
+                                    <span class="tech-label">React</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" class="tech-icon" title="Angular - Framework frontend"/>
+                                    <span class="tech-label">Angular</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="tech-icon" title="JavaScript ES6+"/>
+                                    <span class="tech-label">JavaScript</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="tech-icon" title="TypeScript - JavaScript typé"/>
+                                    <span class="tech-label">TypeScript</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" alt="jQuery" class="tech-icon" title="jQuery - Bibliothèque JavaScript"/>
+                                    <span class="tech-label">jQuery</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg" alt="Webpack" class="tech-icon" title="Webpack - Module bundler"/>
+                                    <span class="tech-label">Webpack</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" alt="Vite" class="tech-icon" title="Vite - Build tool rapide"/>
+                                    <span class="tech-label">Vite</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>DevOps & Cloud</h4>
+                            <div class="skill-icons">
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" class="tech-icon" title="Linux - Administration système"/>
+                                    <span class="tech-label">Linux</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="tech-icon" title="Docker - Conteneurisation"/>
+                                    <span class="tech-label">Docker</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" class="tech-icon" title="Kubernetes - Orchestration"/>
+                                    <span class="tech-label">K8s</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins" class="tech-icon" title="Jenkins - CI/CD"/>
+                                    <span class="tech-label">Jenkins</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" alt="GitLab CI" class="tech-icon" title="GitLab CI - Pipeline"/>
+                                    <span class="tech-label">GitLab</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform" class="tech-icon" title="Terraform - IaC"/>
+                                    <span class="tech-label">Terraform</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" class="tech-icon" title="Microsoft Azure - Cloud computing"/>
+                                    <span class="tech-label">Azure</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP" class="tech-icon" title="Google Cloud Platform - Services cloud"/>
+                                    <span class="tech-label">GCP</span>
+                                </div>
+                                <span class="skill-text-yellow" title="AWS - Amazon Web Services" style="background-color: #ffd700 !important;">AWS</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Data & BI</h4>
+                            <div class="skill-icons">
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="tech-icon" title="PostgreSQL - Base de données relationnelle"/>
+                                    <span class="tech-label">PostgreSQL</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="tech-icon" title="MongoDB - Base de données NoSQL"/>
+                                    <span class="tech-label">MongoDB</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="tech-icon" title="MySQL - Base de données"/>
+                                    <span class="tech-label">MySQL</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Oracle" class="tech-icon" title="Oracle Database"/>
+                                    <span class="tech-label">Oracle</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server" class="tech-icon" title="Microsoft SQL Server"/>
+                                    <span class="tech-label">SQL Server</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis" class="tech-icon" title="Redis - Cache en mémoire & sessions"/>
+                                    <span class="tech-label">Redis</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI" class="tech-icon" title="Power BI - Business Intelligence & Dashboards"/>
+                                    <span class="tech-label">Power BI</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.worldvectorlogo.com/logos/tableau-software.svg" alt="Tableau" class="tech-icon" title="Tableau - Visualisation & analyse de données"/>
+                                    <span class="tech-label">Tableau</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Mobile & Tests</h4>
+                            <div class="skill-icons">
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" class="tech-icon" title="Flutter - Framework mobile cross-platform"/>
+                                    <span class="tech-label">Flutter</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native" class="tech-icon" title="React Native - Apps mobiles iOS/Android"/>
+                                    <span class="tech-label">React Native</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart" class="tech-icon" title="Dart - Langage pour Flutter"/>
+                                    <span class="tech-label">Dart</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Android" class="tech-icon" title="Android - Développement natif"/>
+                                    <span class="tech-label">Android</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/junit/junit-original.svg" alt="JUnit" class="tech-icon" title="JUnit 5 - Tests unitaires"/>
+                                    <span class="tech-label">JUnit</span>
+                                </div>
+                                <span class="skill-text" title="Framework de mocking">Mockito</span>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sonarqube/sonarqube-original.svg" alt="SonarQube" class="tech-icon" title="SonarQube - Qualité du code"/>
+                                    <span class="tech-label">SonarQube</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>IA </h4>
+                            <div class="skill-icons">
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" class="tech-icon" title="TensorFlow - Deep Learning framework"/>
+                                    <span class="tech-label">TensorFlow</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" class="tech-icon" title="PyTorch - Recherche & production ML"/>
+                                    <span class="tech-label">PyTorch</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Keras_logo.svg" alt="Keras" class="tech-icon" title="Keras - API haut niveau pour TensorFlow"/>
+                                    <span class="tech-label">Keras</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn" class="tech-icon" title="Scikit-learn - Machine Learning"/>
+                                    <span class="tech-label">Scikit-learn</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" class="tech-icon" title="NumPy - Calcul scientifique"/>
+                                    <span class="tech-label">NumPy</span>
+                                </div>
+                                <div class="tech-item-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" class="tech-icon" title="Pandas - Analyse de données"/>
+                                    <span class="tech-label">Pandas</span>
+                                </div>
+                                <span class="skill-text" title="Computer Vision - OpenCV, YOLO, détection d'objets">Computer Vision</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="section">
+                    <h3 class="section-title">
+                        Langues
+                    </h3>
+                    <div class="section-content">
+                        <div class="language-item">
+                            <span>Arabe</span>
+                            <span class="language-level">Natif</span>
+                        </div>
+                        <div class="language-item">
+                            <span>Français</span>
+                            <span class="language-level">Courant</span>
+                        </div>
+                        <div class="language-item">
+                            <span>Anglais</span>
+                            <span class="language-level">Professionnel</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="section">
+                    <h3 class="section-title">Soft Skills</h3>
+                    <div class="soft-skills-grid">
+                        <div class="soft-skill-item">🤝 Travail d'équipe</div>
+                        <div class="soft-skill-item">🔍 Problem Solving</div>
+                        <div class="soft-skill-item">🎯 Autonomie</div>
+                        <div class="soft-skill-item">💡 Créativité</div>
+                        <div class="soft-skill-item">📊 Organisation</div>
+                        <div class="soft-skill-item">⚡ Adaptabilité</div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="section">
+                    <h3 class="section-title">
+                        Certifications
+                    </h3>
+                    <div class="section-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
+                        <div class="cert-item" style="display: flex; align-items: center; gap: 4px; padding: 3px 6px;">
+                            <img src="public/assets/img/certification/IBM.png" alt="IBM" style="width: 14px; height: 14px; object-fit: contain;"/>
+                            <span style="font-size: 7px;">Big Data Spark & Hadoop</span>
+                        </div>
+                        <div class="cert-item" style="display: flex; align-items: center; gap: 4px; padding: 3px 6px;">
+                            <img src="public/assets/img/certification/Google_Cloud_Training_Online.png" alt="Google Cloud" style="width: 14px; height: 14px; object-fit: contain;"/>
+                            <span style="font-size: 7px;">Java Microservices</span>
+                        </div>
+                        <div class="cert-item" style="display: flex; align-items: center; gap: 4px; padding: 3px 6px;">
+                            <img src="public/assets/img/certification/Certiprof.png" alt="Certiprof" style="width: 14px; height: 14px; object-fit: contain;"/>
+                            <span style="font-size: 7px;">SCRUM Foundation SFPC</span>
+                        </div>
+                        <div class="cert-item" style="display: flex; align-items: center; gap: 4px; padding: 3px 6px;">
+                            <img src="public/assets/img/certification/IBM.png" alt="IBM" style="width: 14px; height: 14px; object-fit: contain;"/>
+                            <span style="font-size: 7px;">Docker, K8s & OpenShift</span>
+                        </div>
+                        <div class="cert-item" style="display: flex; align-items: center; gap: 4px; padding: 3px 6px;">
+                            <img src="public/assets/img/certification/Meta.png" alt="Meta" style="width: 14px; height: 14px; object-fit: contain;"/>
+                            <span style="font-size: 7px;">React Native</span>
+                        </div>
+                        <div class="cert-item" style="display: flex; align-items: center; gap: 4px; padding: 3px 6px;">
+                            <img src="public/assets/img/certification/Meta.png" alt="Meta" style="width: 14px; height: 14px; object-fit: contain;"/>
+                            <span style="font-size: 7px;">React Basics</span>
+                        </div>
+                        <div class="cert-item" style="display: flex; align-items: center; gap: 4px; padding: 3px 6px;">
+                            <img src="public/assets/img/certification/Whizlabs.png" alt="Whizlabs" style="width: 14px; height: 14px; object-fit: contain;"/>
+                            <span style="font-size: 7px;">Azure Virtual Networks</span>
+                        </div>
+                        <div class="cert-item" style="display: flex; align-items: center; gap: 4px; padding: 3px 6px;">
+                            <img src="public/assets/img/certification/Google.png" alt="Google" style="width: 14px; height: 14px; object-fit: contain;"/>
+                            <span style="font-size: 7px;">Git & GitHub</span>
+                        </div>
+                        <div class="cert-item" style="display: flex; align-items: center; gap: 4px; padding: 3px 6px;">
+                            <img src="public/assets/img/certification/Big_Interview.png" alt="Big Interview" style="width: 14px; height: 14px; object-fit: contain;"/>
+                            <span style="font-size: 7px;">Art of Job Interview</span>
+                        </div>
+                        <div class="cert-item" style="display: flex; align-items: center; gap: 4px; padding: 3px 6px;">
+                            <img src="public/assets/img/certification/University_of_Pennsylvania.png" alt="UPenn" style="width: 14px; height: 14px; object-fit: contain;"/>
+                            <span style="font-size: 7px;">Java & OOP</span>
+                        </div>
+                        <div class="cert-item" style="display: flex; align-items: center; gap: 4px; padding: 3px 6px;">
+                            <img src="public/assets/img/certification/University_of_Michigan.png" alt="UMich" style="width: 14px; height: 14px; object-fit: contain;"/>
+                            <span style="font-size: 7px;">Python for Everybody</span>
+                        </div>
+                        <div class="cert-item" style="display: flex; align-items: center; gap: 4px; padding: 3px 6px;">
+                            <img src="public/assets/img/certification/Codio.png" alt="Codio" style="width: 14px; height: 14px; object-fit: contain;"/>
+                            <span style="font-size: 7px;">Unix System Basics</span>
+                        </div>
+                        <div class="cert-item" style="display: flex; align-items: center; gap: 4px; padding: 3px 6px;">
+                            <img src="public/assets/img/certification/The_Hong_Kong_University_of_Science_and_Technology.png" alt="HKUST" style="width: 14px; height: 14px; object-fit: contain;"/>
+                            <span style="font-size: 7px;">UML Software Modeling</span>
+                        </div>
+                        <div class="cert-item" style="display: flex; align-items: center; gap: 4px; padding: 3px 6px;">
+                            <img src="public/assets/img/certification/Cisco.png" alt="Cisco" style="width: 14px; height: 14px; object-fit: contain;"/>
+                            <span style="font-size: 7px;">CCNA Security</span>
+                        </div>
+                        <div class="cert-item" style="display: flex; align-items: center; gap: 4px; padding: 3px 6px;">
+                            <img src="public/assets/img/certification/Udemy.png" alt="Udemy" style="width: 14px; height: 14px; object-fit: contain;"/>
+                            <span style="font-size: 7px;">Kafka Spring Boot</span>
+                        </div>
+                        <div class="cert-item" style="display: flex; align-items: center; gap: 4px; padding: 3px 6px;">
+                            <img src="public/assets/img/certification/Udemy.png" alt="Udemy" style="width: 14px; height: 14px; object-fit: contain;"/>
+                            <span style="font-size: 7px;">JUnit & Mockito</span>
+                        </div>
+                        <div class="cert-item" style="display: flex; align-items: center; gap: 4px; padding: 3px 6px;">
+                            <img src="public/assets/img/certification/Udemy.png" alt="Udemy" style="width: 14px; height: 14px; object-fit: contain;"/>
+                            <span style="font-size: 7px;">REST API Spring Boot</span>
+                        </div>
+                        <div class="cert-item" style="display: flex; align-items: center; gap: 4px; padding: 3px 6px;">
+                            <img src="public/assets/img/certification/Coursera.png" alt="Coursera" style="width: 14px; height: 14px; object-fit: contain;"/>
+                            <span style="font-size: 7px;">Distributed Systems Java</span>
+                        </div>
+                        <div class="cert-item" style="display: flex; align-items: center; gap: 4px; padding: 3px 6px;">
+                            <img src="public/assets/img/certification/Coursera.png" alt="Coursera" style="width: 14px; height: 14px; object-fit: contain;"/>
+                            <span style="font-size: 7px;">GitHub Copilot</span>
+                        </div>
+                        <div class="cert-item" style="display: flex; align-items: center; gap: 4px; padding: 3px 6px; background: linear-gradient(45deg, #fff3cd, #ffeeba);">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" style="width: 14px; height: 14px; object-fit: contain;"/>
+                            <span style="font-size: 7px;">Cloud Practitioner <em>(en cours)</em></span>
+                        </div>
+                        <div class="cert-item" style="display: flex; align-items: center; gap: 4px; padding: 3px 6px; background: linear-gradient(45deg, #fff3cd, #ffeeba);">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Oracle" style="width: 14px; height: 14px; object-fit: contain;"/>
+                            <span style="font-size: 7px;">Java SE 17 <em>(en cours)</em></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Profile -->
+                <div class="section">
+                    <h3 class="section-title">
+                        Profil
+                    </h3>
+                    <div class="profile-content">
+                        <strong>Software Engineer avec +100 projets sur GitHub</strong> dans différentes technologies (Java, React, Node.js, .NET, Python, Mobile). Passionné par le développement Full Stack et l'architecture logicielle moderne.<br><br>
+                        Expertise en solutions robustes et scalables avec Java/Spring Boot, React, MERN Stack et technologies Cloud (AWS, Azure, GCP). Compétences en UI/UX Design et création d'interfaces modernes.<br><br>
+                        <strong>Disponible immédiatement</strong> pour opportunités CDI ou missions Freelance. Prêt à relever tout défi technique.
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div class="section">
+                    <h3 class="section-title">
+                        Expérience Professionnelle
+                    </h3>
+                    <div class="section-content">
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <img src="public/assets/img/experience/Capgemini.png" alt="Capgemini" class="company-logo"/>
+                                <div class="job-info">
+                                    <div class="job-title">Software Engineer</div>
+                                    <div class="company">CAPGEMINI TS</div>
+                                    <div class="duration">Mars 2025 - Actuellement</div>
+                                </div>
+                            </div>
+                            <div class="job-description">
+                                <ul>
+                                <li>Conception et développement d'une plateforme interne d'évaluation agile, intégrée à NEXT</li>
+                                <li>Refonte vers une architecture microservices, mise en place de pipelines CI/CD, DDD et Clean Architecture</li>
+                                <li><strong>Playwright Automation Panel:</strong> Développement d'un panel d'administration React pour automatiser les tâches avec Playwright (tests E2E, scraping, workflows)</li>
+                                <li><strong>DigiCamp Knowledge Hub:</strong> Plateforme GED + Gestion de projet (Kanban, collaboration, versioning documents, suivi tâches équipes)</li>
+                                <li>Implémentation de microservices, automatisation DevOps, CI/CD et stratégies de testing avancées</li>
+                                </ul>
+                                <div class="tech-stack-icons">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" title="Java 17/21 - Backend" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" title="Spring Boot 3 - Microservices" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" title="React 18 - Frontend" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/playwright/playwright-original.svg" title="Playwright - Automatisation tests E2E" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" title="Docker - Conteneurisation" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" title="Jenkins - CI/CD pipelines" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/junit/junit-original.svg" title="JUnit 5 - Tests unitaires" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sonarqube/sonarqube-original.svg" title="SonarQube - Qualité du code" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" title="Grafana - Monitoring & visualisation" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" title="Prometheus - Métriques & alertes" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <img src="https://media.licdn.com/dms/image/v2/D4E0BAQHVNuqWsI162g/company-logo_200_200/company-logo_200_200/0/1694360474816?e=2147483647&v=beta&t=BSa2vGJk_Hr6XdcBDH7fU4qb29QdWx5clRhLcr5qBU8" alt="3D Smart Factory" class="company-logo"/>
+                                <div class="job-info">
+                                    <div class="job-title">Développeur Full Stack</div>
+                                    <div class="company">3D SMART FACTORY</div>
+                                    <div class="duration">Sept - Oct 2024</div>
+                                </div>
+                            </div>
+                            <div class="job-description">
+                                <ul>
+                                    <li>Application gestion stagiaires temps réel</li>
+                                    <li>API intégration Google Sheets</li>
+                                    <li>Solution d'administration et gestion de données</li>
+                                </ul>
+                                <div class="tech-stack-icons">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" title="Spring Boot - API RESTful" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" title="Angular - Application web" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" title="PostgreSQL - Base de données" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" title="Google Sheets API - Intégration" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <img src="public/assets/img/experience/OLA_Energy.png" alt="OLA Energy" class="company-logo"/>
+                                <div class="job-info">
+                                    <div class="job-title">Développeur Power BI, Power Apps & IA</div>
+                                    <div class="company">OLA ENERGY</div>
+                                    <div class="duration">Juil - Sept 2024</div>
+                                </div>
+                            </div>
+                            <div class="job-description">
+                                <ul>
+                                    <li><strong>Vainqueur EMSI Summer IT Competition 2024</strong></li>
+                                    <li>Développement modèles prédictifs IA (MTTF/MTTR) pour maintenance préventive</li>
+                                    <li>Système GMAO avec tableaux de bord Power BI interactifs</li>
+                                    <li>Applications Power Apps + Power Automate pour gestion inventaire et pièces de rechange</li>
+                                    <li>Architecture Clean Architecture, DDD, TDD - Documentation technique complète</li>
+                                    <li>Interfaces ergonomiques pour magasiniers et techniciens</li>
+                                </ul>
+                                <div class="tech-stack-icons">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" title="Power BI - Tableaux de bord interactifs" />
+
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" title="Python - Machine Learning MTTF/MTTR" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" title="Azure - Cloud platform" />
+                                    <span class="tech-tag" title="Power Apps - Applications low-code">Power Apps </span>
+                                    <span class="tech-tag" title="Power Automate - Automatisation workflows">Power Automate</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <img src="public/assets/img/experience/SILIAD.png" alt="SILIAD" class="company-logo"/>
+                                <div class="job-info">
+                                    <div class="job-title">Développeur .NET/Angular</div>
+                                    <div class="company">SILIAD</div>
+                                    <div class="duration">Nov 2023 - Mai 2024</div>
+                                </div>
+                            </div>
+                            <div class="job-description">
+                                <ul>
+                                    <li>Applications location automobile</li>
+                                    <li>Solutions clients et agences</li>
+                                    <li>Tests unitaires, Agile/Scrum</li>
+                                </ul>
+                                <div class="tech-stack-icons">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" title=".NET Core - Backend API" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" title="Angular - Application frontend" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" title="Docker - Déploiement" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" title="Azure DevOps - CI/CD" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <img src="public/assets/img/experience/ONP_Office_National_des_Pêches.png" alt="ONP" class="company-logo"/>
+                                <div class="job-info">
+                                    <div class="job-title">Développeur .NET</div>
+                                    <div class="company">Office National des Pêches</div>
+                                    <div class="duration">Mars - Juin 2023</div>
+                                </div>
+                            </div>
+                            <div class="job-description">
+                                <ul>
+                                    <li>Modernisation SI avec application web</li>
+                                    <li>Architecture MVC, intégration services web</li>
+                                    <li>Développement API RESTful</li>
+
+                                    <li>Gestion flotte navale et maintenance</li>
+                                </ul>
+                                <div class="tech-stack-icons">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" title=".NET Core - Architecture MVC" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" title="SQL Server - Gestion de données" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" title="C# - Développement backend" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Projects Footer Section -->
+        <div class="projects-footer">
+            <h3 class="section-title" style="color: white; border-bottom-color: #ffd700;">
+                Projets Freelance & Innovation - En Production
+            </h3>
+            <div class="projects-grid" style="grid-template-columns: repeat(5, 1fr);">
+                <!-- BlaBlaTrip -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <img src="public/assets/img/blablatriplogos.jpg" alt="BlaBlaTrip" class="project-logo"/>
+                        <div class="project-title"><a href="https://blablatrip.com" target="_blank">BLABLATRIP</a></div>
+                    </div>
+                    <div class="project-desc">Plateforme guides touristiques IA - 22+ guides, recommandation IA</div>
+                    <div class="project-tech">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" title="React - Interface utilisateur moderne"/>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" title="Node.js - Backend API"/>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" title="MongoDB - Base de données NoSQL"/>
+                        <span class="cloud-badge" style="background: rgba(255,0,0,0.3); border-color: #ff6b6b;" title="CMI Payment Gateway">CMI</span>
+                        <span class="cloud-badge" title="Agentic AI - Recommandations intelligentes">Agentic AI</span>
+                    </div>
+                </div>
+
+                <!-- Automotive.ma -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <img src="public/assets/img/logo_automotive.png" alt="Automotive" class="project-logo"/>
+                        <div class="project-title"><a href="https://automotive.ma" target="_blank">AUTOMOTIVE.MA</a></div>
+                    </div>
+                    <div class="project-desc">Location voitures Maroc - 2000+ users, 50+ agences</div>
+                    <div class="project-tech">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" title=".NET Core 8 - Backend performant"/>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" title="MySQL - Gestion de données"/>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" title="React - Interface utilisateur"/>
+                        <span class="cloud-badge" style="background: rgba(99,102,241,0.3); border-color: #818cf8;" title="Stripe Payment Integration">Stripe</span>
+                        <span class="cloud-badge" title="Microsoft Azure - Cloud hosting">Azure</span>
+                    </div>
+                </div>
+
+                <!-- SarfX -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <img src="public/assets/img/logo_sarfx2.jpg" alt="SarfX" class="project-logo"/>
+                        <div class="project-title"><a href="https://sarfx.io" target="_blank">SARFX.IO</a> | <a href="https://sarfx.fr" target="_blank">.FR</a></div>
+                    </div>
+                    <div class="project-desc">Fintech - Retrait sans carte & échange devises IA</div>
+                    <div class="project-tech">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" title="React Native - Apps iOS & Android"/>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" title="iOS - Application native" style="filter: brightness(0) invert(1);"/>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" title="Android - Application native"/>
+                        <span class="cloud-badge" style="background: rgba(99,102,241,0.3); border-color: #818cf8;" title="Stripe - Paiements sécurisés">Stripe</span>
+                        <span class="cloud-badge" title="Google Cloud Platform">GCP</span>
+                    </div>
+                </div>
+
+                <!-- Allo-Phone -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <img src="public/assets/img/logo_allophone.png" alt="AlloPhone" class="project-logo"/>
+                        <div class="project-title"><a href="https://allo-phones.ma" target="_blank">ALLO-PHONE</a></div>
+                    </div>
+                    <div class="project-desc">Réparation mobile à domicile - Booking online</div>
+                    <div class="project-tech">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" title="React - Frontend moderne"/>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" title="Node.js - Backend"/>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" title="Power Apps - Gestion réservations" style="width: 12px; height: 12px;"/>
+                        <span class="cloud-badge" title="Hostinger - Hébergement web">Hostinger</span>
+                    </div>
+                </div>
+
+                <!-- Morocco AutoPièces -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <img src="public/assets/img/logohttpsmoroccautoparts.com.png" alt="MoroccAutoParts" class="project-logo"/>
+                        <div class="project-title"><a href="https://moroccautoparts.com" target="_blank">AUTOPIÈCES</a></div>
+                    </div>
+                    <div class="project-desc">Marketplace B2B/B2C - 10K+ pièces auto, Agentic</div>
+                    <div class="project-tech">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" title="MongoDB - Base de données flexible"/>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" title="React - Interface marketplace"/>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" title="Node.js - API RESTful"/>
+                        <span class="cloud-badge" style="background: rgba(99,102,241,0.3); border-color: #818cf8;" title="Stripe - Paiements en ligne">Stripe</span>
+                        <span class="cloud-badge" title="Hostinger - Cloud hosting">Hostinger</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soufiane Aniba - Full-Stack Developer & Data Engineer | Portfolio</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio de Soufiane Aniba - Ingénieur Full-Stack & Data Engineer spécialisé en Big Data, Cloud Computing, React, Spring Boot. Découvrez mes projets innovants.">
+    <meta name="keywords" content="Soufiane Aniba, Full-Stack Developer, Data Engineer, Big Data, React, Spring Boot, Angular, MongoDB, PostgreSQL, AWS, Azure, Docker, Kubernetes">
+    <meta name="author" content="Soufiane Aniba">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://soufiane4906.github.io/soufiane-portfolio/">
+    <meta property="og:title" content="Soufiane Aniba - Full-Stack Developer & Data Engineer">
+    <meta property="og:description" content="Portfolio professionnel showcasing mes projets en production, compétences techniques et parcours académique.">
+    <meta property="og:image" content="https://soufiane4906.github.io/soufiane-portfolio/public/assets/img/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://soufiane4906.github.io/soufiane-portfolio/">
+    <meta property="twitter:title" content="Soufiane Aniba - Full-Stack Developer & Data Engineer">
+    <meta property="twitter:description" content="Portfolio professionnel showcasing mes projets en production, compétences techniques et parcours académique.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://soufiane4906.github.io/soufiane-portfolio/">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- CSS externe -->
+    <link rel="stylesheet" href="portfolio-style.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Soufiane Aniba",
+        "jobTitle": "Full-Stack Developer & Data Engineer",
+        "url": "https://soufiane4906.github.io/soufiane-portfolio/",
+        "email": "anibasoufiane2001@gmail.com",
+        "telephone": "+212656037963",
+        "sameAs": [
+            "https://linkedin.com/in/soufianeaniba",
+            "https://github.com/Soufiane4906"
+        ],
+        "knowsAbout": ["Full-Stack Development", "Big Data", "Cloud Computing", "React", "Spring Boot", "Docker", "Kubernetes"],
+        "alumniOf": [
+            {
+                "@type": "EducationalOrganization",
+                "name": "Université Côte d'Azur"
+            },
+            {
+                "@type": "EducationalOrganization",
+                "name": "EMSI Casablanca"
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i data-lucide="code-2"></i>
+                </div>
+                <span class="logo-text">Soufiane<span class="logo-accent">.dev</span></span>
+            </a>
+
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-link" onclick="closeMenu()">
+                    <i data-lucide="user" class="nav-icon"></i>
+                    <span>À propos</span>
+                </a></li>
+                <li><a href="#projets" class="nav-link" onclick="closeMenu()">
+                    <i data-lucide="rocket" class="nav-icon"></i>
+                    <span>Projets</span>
+                </a></li>
+                <li><a href="#competences" class="nav-link" onclick="closeMenu()">
+                    <i data-lucide="wrench" class="nav-icon"></i>
+                    <span>Compétences</span>
+                </a></li>
+                <li><a href="#cv-academique" class="nav-link" onclick="closeMenu()">
+                    <i data-lucide="graduation-cap" class="nav-icon"></i>
+                    <span>CV & Formation</span>
+                </a></li>
+                <li><a href="#contact" class="nav-link" onclick="closeMenu()">
+                    <i data-lucide="mail" class="nav-icon"></i>
+                    <span>Contact</span>
+                </a></li>
+                <li><button class="theme-toggle" onclick="toggleTheme()" title="Changer le thème">
+                    <i data-lucide="moon" id="theme-icon"></i>
+                </button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+            <div class="hero-particles" id="particles"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-icon">🚀</span>
+                <span>Disponible pour de nouvelles opportunités</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Bonjour, je suis</span>
+                <span class="title-name">Soufiane Aniba</span>
+                <span class="title-role typing-text" id="typingText"></span>
+            </h1>
+            <p class="hero-subtitle">
+                <span class="highlight">Full-Stack Developer</span> & <span class="highlight">Data Engineer</span>
+                passionné par la création de solutions innovantes. Spécialisé en
+                <strong>Big Data</strong>, <strong>Cloud Computing</strong> et <strong>Architecture Distribuée</strong>.
+            </p>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="4">0</span>
+                    <span class="stat-label">Projets en Production</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="20">0</span>
+                    <span class="stat-label">Certifications</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="5">0</span>
+                    <span class="stat-label">Années d'Expérience</span>
+                </div>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="#projets" class="cta-button primary">
+                    <i data-lucide="folder-open"></i>
+                    Voir mes projets
+                </a>
+                <a href="#contact" class="cta-button secondary">
+                    <i data-lucide="send"></i>
+                    Me contacter
+                </a>
+                <a href="Soufiane_Aniba_CV_2025.pdf" download class="cta-button outline">
+                    <i data-lucide="download"></i>
+                    Télécharger CV
+                </a>
+            </div>
+
+            <!-- Tech Stack Pills -->
+            <div class="hero-tech-stack">
+                <span class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"> React</span>
+                <span class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring"> Spring Boot</span>
+                <span class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"> Docker</span>
+                <span class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"> Python</span>
+                <span class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"> AWS</span>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <h2 class="section-title">
+                <i data-lucide="user"></i>
+                À propos de moi
+            </h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">
+                        Je suis <strong>Soufiane Aniba</strong>, un développeur passionné actuellement en
+                        <strong>Master M2 Big Data & Systems Integration</strong> à l'Université Côte d'Azur, France.
+                    </p>
+                    <p>
+                        Fort d'une expérience de plus de <strong>5 ans</strong> en développement logiciel, j'ai eu l'opportunité
+                        de travailler avec des entreprises leaders comme <strong>Capgemini</strong>, <strong>OLA Energy</strong>,
+                        et de créer plusieurs <strong>startups technologiques</strong> au Maroc.
+                    </p>
+                    <p>
+                        Ma passion ? Transformer des idées complexes en solutions élégantes et performantes.
+                        Que ce soit une plateforme de location automobile, un marketplace B2B/B2C, ou une application
+                        de covoiturage, j'apporte mon expertise technique et ma créativité pour créer des produits
+                        qui font la différence.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i data-lucide="map-pin"></i>
+                            <span>Nice, France 🇫🇷 / Casablanca, Maroc 🇲🇦</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i data-lucide="languages"></i>
+                            <span>Français, Anglais, Arabe</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i data-lucide="briefcase"></i>
+                            <span>Open to Work - CDI / Freelance</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-frame">
+                        <div class="profile-avatar">
+                            <span class="avatar-emoji">👨‍💻</span>
+                        </div>
+                        <div class="image-decoration"></div>
+                    </div>
+                    <div class="experience-badge">
+                        <span class="badge-number">5+</span>
+                        <span class="badge-text">Ans d'expérience</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projets Section -->
+        <section id="projets" class="section">
+            <h2 class="section-title">
+                <i data-lucide="rocket"></i>
+                Mes Projets en Production
+            </h2>
+            <p class="section-subtitle">Des solutions réelles utilisées par des milliers d'utilisateurs</p>
+
+            <div class="projects-grid">
+                <!-- Automotive.ma -->
+                <div class="project-card featured">
+                    <div class="project-badge">🔥 Featured</div>
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <img src="public/assets/img/logo_automotive.png" alt="Automotive.ma Logo" loading="lazy" />
+                        </div>
+                        <div class="project-info">
+                            <h3>Automotive.ma</h3>
+                            <p>Plateforme de Location Automobile</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Solution complète de location de voitures au Maroc avec système de réservation en ligne,
+                        gestion de flotte temps réel et interface d'administration avancée. Plus de <strong>100 villes</strong>
+                        couvertes avec un réseau de <strong>50+ agences</strong> partenaires.
+                    </p>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <span class="stat-number">2000+</span>
+                            <span class="stat-label">Utilisateurs</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Agences</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">Villes</span>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"> React</span>
+                        <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"> Node.js</span>
+                        <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"> MongoDB</span>
+                        <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express"> Express</span>
+                        <span class="tech-tag">Stripe API</span>
+                        <span class="tech-tag">Socket.io</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://automotive.ma" target="_blank" rel="noopener" class="project-link primary">
+                            <i data-lucide="external-link"></i>
+                            Visiter le site
+                        </a>
+                    </div>
+                </div>
+
+                <!-- BlaBlaTrip -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <img src="public/assets/img/blablatriplogos.jpg" alt="BlaBlaTrip Logo" loading="lazy" />
+                        </div>
+                        <div class="project-info">
+                            <h3>BlaBlaTrip.com</h3>
+                            <p>Plateforme de Covoiturage</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Plateforme innovante combinant covoiturage et communication sécurisée.
+                        Messagerie chiffrée end-to-end, géolocalisation temps réel, PWA optimisée mobile.
+                    </p>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <span class="stat-number">2500+</span>
+                            <span class="stat-label">Utilisateurs</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Trajets/mois</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">95%</span>
+                            <span class="stat-label">Satisfaction</span>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue"> Vue.js</span>
+                        <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring"> Spring Boot</span>
+                        <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"> PostgreSQL</span>
+                        <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis"> Redis</span>
+                        <span class="tech-tag">Google Maps API</span>
+                        <span class="tech-tag">PWA</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://blablatrip.com" target="_blank" rel="noopener" class="project-link primary">
+                            <i data-lucide="external-link"></i>
+                            Visiter le site
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Allo Phone -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <img src="public/assets/img/logo_allophone.png" alt="Allo Phone Logo" loading="lazy" />
+                        </div>
+                        <div class="project-info">
+                            <h3>Allo Phone</h3>
+                            <p>Réparation Mobile à Domicile</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Service de réparation de smartphones à domicile au Maroc.
+                        Réservation en ligne, intervention rapide et garantie sur toutes les réparations.
+                    </p>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Réparations</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Satisfaction</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">24h</span>
+                            <span class="stat-label">Intervention</span>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native"> React Native</span>
+                        <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"> Node.js</span>
+                        <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"> MongoDB</span>
+                        <span class="tech-tag">Google Maps</span>
+                        <span class="tech-tag">Stripe</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://allo-phones-maroc.base44.app" target="_blank" rel="noopener" class="project-link primary">
+                            <i data-lucide="external-link"></i>
+                            Visiter le site
+                        </a>
+                    </div>
+                </div>
+
+                <!-- MoroccAutoParts -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <img src="public/assets/img/logohttpsmoroccautoparts.com.png" alt="MoroccAutoParts Logo" loading="lazy" />
+                        </div>
+                        <div class="project-info">
+                            <h3>MoroccAutoParts.com</h3>
+                            <p>Marketplace Pièces Auto</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Marketplace B2B/B2C spécialisée en pièces automobiles avec catalogue intelligent,
+                        système multi-vendeurs et gestion logistique intégrée.
+                    </p>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <span class="stat-number">10k+</span>
+                            <span class="stat-label">Références</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">200+</span>
+                            <span class="stat-label">Vendeurs</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Disponibilité</span>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular"> Angular</span>
+                        <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring"> Spring Boot</span>
+                        <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"> PostgreSQL</span>
+                        <span class="tech-tag">Elasticsearch</span>
+                        <span class="tech-tag">PayPal API</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://moroccautoparts.com" target="_blank" rel="noopener" class="project-link primary">
+                            <i data-lucide="external-link"></i>
+                            Visiter le site
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compétences Section -->
+        <section id="competences" class="section">
+            <h2 class="section-title">
+                <i data-lucide="wrench"></i>
+                Stack Technologique
+            </h2>
+            <p class="section-subtitle">Technologies que j'utilise au quotidien</p>
+
+            <div class="skills-container">
+                <!-- Frontend -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i data-lucide="monitor"></i>
+                        <h3>Frontend</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="skill-icon"/>
+                            <span>React</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js" class="skill-icon"/>
+                            <span>Vue.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" class="skill-icon"/>
+                            <span>Angular</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" class="skill-icon"/>
+                            <span>Next.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="skill-icon"/>
+                            <span>TypeScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind" class="skill-icon"/>
+                            <span>Tailwind</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i data-lucide="server"></i>
+                        <h3>Backend</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot" class="skill-icon"/>
+                            <span>Spring Boot</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="skill-icon"/>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-icon"/>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="skill-icon"/>
+                            <span>Java</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" class="skill-icon"/>
+                            <span>Laravel</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET" class="skill-icon"/>
+                            <span>.NET Core</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bases de Données -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i data-lucide="database"></i>
+                        <h3>Bases de Données</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="skill-icon"/>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="skill-icon"/>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="skill-icon"/>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis" class="skill-icon"/>
+                            <span>Redis</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch" class="skill-icon"/>
+                            <span>Elasticsearch</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DevOps & Cloud -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i data-lucide="cloud"></i>
+                        <h3>DevOps & Cloud</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="skill-icon"/>
+                            <span>Docker</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" class="skill-icon"/>
+                            <span>Kubernetes</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="skill-icon"/>
+                            <span>AWS</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" class="skill-icon"/>
+                            <span>Azure</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins" class="skill-icon"/>
+                            <span>Jenkins</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" alt="GitLab CI" class="skill-icon"/>
+                            <span>GitLab CI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Big Data -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i data-lucide="bar-chart-3"></i>
+                        <h3>Big Data & IA</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg" alt="Kafka" class="skill-icon"/>
+                            <span>Apache Kafka</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg" alt="Spark" class="skill-icon"/>
+                            <span>Apache Spark</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hadoop/hadoop-original.svg" alt="Hadoop" class="skill-icon"/>
+                            <span>Hadoop</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" class="skill-icon"/>
+                            <span>TensorFlow</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" class="skill-icon"/>
+                            <span>Pandas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i data-lucide="tool"></i>
+                        <h3>Outils</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="skill-icon"/>
+                            <span>Git</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="skill-icon"/>
+                            <span>GitHub</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" alt="Jira" class="skill-icon"/>
+                            <span>Jira</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" class="skill-icon"/>
+                            <span>Figma</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman" class="skill-icon"/>
+                            <span>Postman</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CV & Parcours Académique Section -->
+        <section id="cv-academique" class="section cv-section">
+            <h2 class="section-title">
+                <i data-lucide="graduation-cap"></i>
+                CV & Parcours Académique
+            </h2>
+
+            <!-- CV Preview -->
+            <div class="cv-preview-container">
+                <div class="cv-preview-header">
+                    <h3><i data-lucide="file-text"></i> Mon CV</h3>
+                    <div class="cv-actions">
+                        <a href="cv.html" target="_blank" class="cv-action-btn">
+                            <i data-lucide="eye"></i>
+                            Voir en ligne
+                        </a>
+                        <a href="Soufiane_Aniba_CV_2025.pdf" target="_blank" class="cv-action-btn">
+                            <i data-lucide="external-link"></i>
+                            Ouvrir PDF
+                        </a>
+                        <a href="Soufiane_Aniba_CV_2025.pdf" download class="cv-action-btn primary">
+                            <i data-lucide="download"></i>
+                            Télécharger
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cv-preview">
+                    <div class="cv-iframe-container">
+                        <iframe src="cv.html" class="cv-iframe" title="CV Soufiane Aniba"></iframe>
+                        <div class="cv-overlay">
+                            <p>Cliquez pour voir le CV complet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parcours Académique -->
+            <div class="academic-timeline">
+                <h3><i data-lucide="graduation-cap"></i> Parcours Académique</h3>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="school-logo">
+                                <img src="public/assets/img/education/unica.jpg" alt="UCA Logo" class="logo-img" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2024 - 2025</div>
+                            <h4>Master M2 - Big Data & Systems Integration</h4>
+                            <p class="institution">Université Côte d'Azur, Nice, France 🇫🇷</p>
+                            <ul class="timeline-details">
+                                <li>Spécialisation : Big Data, Intelligence Artificielle et Intégration Système</li>
+                                <li>Technologies : Spark, Hadoop, Python, Machine Learning, Docker</li>
+                                <li>Projets : Analyse de données massives, Architecture distribuée</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="school-logo">
+                                <img src="public/assets/img/education/Ecole_Marocaine_des_Sciences_de_l'ingénieur.png" alt="EMSI Logo" class="logo-img" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2023 - 2025</div>
+                            <h4>Cycle Ingénieur Informatique</h4>
+                            <p class="institution">EMSI Casablanca, Maroc 🇲🇦</p>
+                            <ul class="timeline-details">
+                                <li>Spécialisation : Développement Full-Stack et Architecture Logicielle</li>
+                                <li>Technologies : Spring Boot, Angular, React, DevOps, Cloud Computing</li>
+                                <li>Projet de fin d'études : Plateformes e-commerce et applications mobiles</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="school-logo">
+                                <img src="public/assets/img/education/Faculté_des_Sciences_et_Techniques_Mohammedia_(FST.png" alt="FST Logo" class="logo-img" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2020 - 2023</div>
+                            <h4>Licence Informatique & Réseaux</h4>
+                            <p class="institution">FST Mohammedia, Université Hassan II, Maroc 🇲🇦</p>
+                            <ul class="timeline-details">
+                                <li>Parcours : Informatique et Réseaux de Télécommunications</li>
+                                <li>Formation solide en programmation et administration réseau</li>
+                                <li>Technologies : Java, C++, Python, Réseaux, Systèmes Linux</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="certifications-section">
+                <h3><i data-lucide="award"></i> Certifications & Formations (20+)</h3>
+
+                <div class="certifications-slider">
+                    <div class="certifications-container">
+                        <div class="certifications-track" id="certificationsTrack">
+                            <!-- IBM Big Data -->
+                            <div class="certification-slide">
+                                <div class="certification-card">
+                                    <div class="cert-logo">
+                                        <img src="public/assets/img/certification/IBM.png" alt="IBM" class="cert-logo-img" loading="lazy">
+                                    </div>
+                                    <div class="cert-content">
+                                        <h4>Big Data with Spark and Hadoop</h4>
+                                        <p class="cert-provider">IBM</p>
+                                        <span class="cert-date">2025</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Google Cloud -->
+                            <div class="certification-slide">
+                                <div class="certification-card">
+                                    <div class="cert-logo">
+                                        <img src="public/assets/img/certification/Google_Cloud_Training_Online.png" alt="Google Cloud" class="cert-logo-img" loading="lazy">
+                                    </div>
+                                    <div class="cert-content">
+                                        <h4>Java Microservices with Spring Boot</h4>
+                                        <p class="cert-provider">Google Cloud</p>
+                                        <span class="cert-date">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SCRUM -->
+                            <div class="certification-slide">
+                                <div class="certification-card">
+                                    <div class="cert-logo">
+                                        <img src="public/assets/img/certification/Certiprof.png" alt="Certiprof" class="cert-logo-img" loading="lazy">
+                                    </div>
+                                    <div class="cert-content">
+                                        <h4>SCRUM Foundation Professional</h4>
+                                        <p class="cert-provider">Certiprof</p>
+                                        <span class="cert-date">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Docker Kubernetes -->
+                            <div class="certification-slide">
+                                <div class="certification-card">
+                                    <div class="cert-logo">
+                                        <img src="public/assets/img/certification/IBM.png" alt="IBM" class="cert-logo-img" loading="lazy">
+                                    </div>
+                                    <div class="cert-content">
+                                        <h4>Docker, Kubernetes & OpenShift</h4>
+                                        <p class="cert-provider">IBM</p>
+                                        <span class="cert-date">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Meta React Native -->
+                            <div class="certification-slide">
+                                <div class="certification-card">
+                                    <div class="cert-logo">
+                                        <img src="public/assets/img/certification/Meta.png" alt="Meta" class="cert-logo-img" loading="lazy">
+                                    </div>
+                                    <div class="cert-content">
+                                        <h4>React Native</h4>
+                                        <p class="cert-provider">Meta</p>
+                                        <span class="cert-date">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cisco -->
+                            <div class="certification-slide">
+                                <div class="certification-card">
+                                    <div class="cert-logo">
+                                        <img src="public/assets/img/certification/Cisco.png" alt="Cisco" class="cert-logo-img" loading="lazy">
+                                    </div>
+                                    <div class="cert-content">
+                                        <h4>CCNA Security</h4>
+                                        <p class="cert-provider">Cisco</p>
+                                        <span class="cert-date">2023</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Python -->
+                            <div class="certification-slide">
+                                <div class="certification-card">
+                                    <div class="cert-logo">
+                                        <img src="public/assets/img/certification/University_of_Michigan.png" alt="UMich" class="cert-logo-img" loading="lazy">
+                                    </div>
+                                    <div class="cert-content">
+                                        <h4>Python for Everybody</h4>
+                                        <p class="cert-provider">University of Michigan</p>
+                                        <span class="cert-date">2023</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Apache Kafka -->
+                            <div class="certification-slide">
+                                <div class="certification-card">
+                                    <div class="cert-logo">
+                                        <img src="public/assets/img/certification/Udemy.png" alt="Udemy" class="cert-logo-img" loading="lazy">
+                                    </div>
+                                    <div class="cert-content">
+                                        <h4>Apache Kafka for Developers</h4>
+                                        <p class="cert-provider">Udemy</p>
+                                        <span class="cert-date">2023</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation -->
+                        <div class="certifications-nav">
+                            <button class="cert-nav-btn cert-prev" id="certPrev" aria-label="Précédent">
+                                <i data-lucide="chevron-left"></i>
+                            </button>
+                            <button class="cert-nav-btn cert-next" id="certNext" aria-label="Suivant">
+                                <i data-lucide="chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <div class="certifications-dots">
+                            <span class="cert-dot active" data-cert="0"></span>
+                            <span class="cert-dot" data-cert="1"></span>
+                            <span class="cert-dot" data-cert="2"></span>
+                            <span class="cert-dot" data-cert="3"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <h2 class="section-title">
+                <i data-lucide="send"></i>
+                Transformons vos idées ensemble
+            </h2>
+            <p class="contact-subtitle">Prêt à donner vie à votre prochain projet ? Je suis à votre écoute !</p>
+
+            <div class="contact-cards">
+                <a href="mailto:anibasoufiane2001@gmail.com" class="contact-card">
+                    <div class="contact-icon">
+                        <i data-lucide="mail"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>anibasoufiane2001@gmail.com</p>
+                </a>
+
+                <a href="tel:+212656037963" class="contact-card">
+                    <div class="contact-icon">
+                        <i data-lucide="phone"></i>
+                    </div>
+                    <h3>Téléphone</h3>
+                    <p>+212 656 037 963</p>
+                </a>
+
+                <a href="https://linkedin.com/in/soufianeaniba" target="_blank" rel="noopener" class="contact-card">
+                    <div class="contact-icon">
+                        <i data-lucide="linkedin"></i>
+                    </div>
+                    <h3>LinkedIn</h3>
+                    <p>soufianeaniba</p>
+                </a>
+
+                <a href="https://github.com/Soufiane4906" target="_blank" rel="noopener" class="contact-card">
+                    <div class="contact-icon">
+                        <i data-lucide="github"></i>
+                    </div>
+                    <h3>GitHub</h3>
+                    <p>Soufiane4906</p>
+                </a>
+            </div>
+
+            <div class="contact-cta">
+                <p>Ou envoyez-moi un message directement :</p>
+                <a href="mailto:anibasoufiane2001@gmail.com?subject=Collaboration%20Projet&body=Bonjour%20Soufiane,%0A%0AJe%20souhaite%20discuter%20d'un%20projet..." class="cta-button primary large">
+                    <i data-lucide="mail"></i>
+                    Envoyer un email
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="logo-text">Soufiane<span class="logo-accent">.dev</span></span>
+                <p>Full-Stack Developer & Data Engineer</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/Soufiane4906" target="_blank" rel="noopener"><i data-lucide="github"></i></a>
+                <a href="https://linkedin.com/in/soufianeaniba" target="_blank" rel="noopener"><i data-lucide="linkedin"></i></a>
+                <a href="mailto:anibasoufiane2001@gmail.com"><i data-lucide="mail"></i></a>
+            </div>
+            <p class="footer-copyright">© 2025 Soufiane Aniba. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Management
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        }
+
+        function updateThemeIcon(theme) {
+            const themeIcon = document.getElementById('theme-icon');
+            if (themeIcon) {
+                themeIcon.setAttribute('data-lucide', theme === 'dark' ? 'sun' : 'moon');
+                lucide.createIcons();
+            }
+        }
+
+        // Typing Effect
+        function initTypingEffect() {
+            const roles = [
+                'Full-Stack Developer',
+                'Data Engineer',
+                'Cloud Architect',
+                'Problem Solver'
+            ];
+            let roleIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            const typingElement = document.getElementById('typingText');
+
+            function type() {
+                const currentRole = roles[roleIndex];
+
+                if (isDeleting) {
+                    typingElement.textContent = currentRole.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typingElement.textContent = currentRole.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                if (!isDeleting && charIndex === currentRole.length) {
+                    setTimeout(() => isDeleting = true, 2000);
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    roleIndex = (roleIndex + 1) % roles.length;
+                }
+
+                const typeSpeed = isDeleting ? 50 : 100;
+                setTimeout(type, typeSpeed);
+            }
+
+            type();
+        }
+
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number[data-count]');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+
+                updateCounter();
+            });
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('scrolled', window.scrollY > 100);
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('animate-in');
+                    }, index * 100);
+                }
+            });
+        }, observerOptions);
+
+        // CV Interactions
+        function initCVInteractions() {
+            const cvOverlay = document.querySelector('.cv-overlay');
+            if (cvOverlay) {
+                cvOverlay.addEventListener('click', () => {
+                    window.open('cv.html', '_blank');
+                });
+            }
+        }
+
+        // Certifications Slider
+        function initCertificationsSlider() {
+            const track = document.getElementById('certificationsTrack');
+            const prevBtn = document.getElementById('certPrev');
+            const nextBtn = document.getElementById('certNext');
+            const dots = document.querySelectorAll('.cert-dot');
+
+            if (!track || !prevBtn || !nextBtn) return;
+
+            let currentSlide = 0;
+            const totalSlides = dots.length;
+            let autoSlideInterval;
+
+            function updateSlider() {
+                track.style.transform = `translateX(-${currentSlide * 25}%)`;
+                dots.forEach((dot, i) => dot.classList.toggle('active', i === currentSlide));
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlider();
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateSlider();
+            }
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 4000);
+            }
+
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+
+            nextBtn.addEventListener('click', () => { nextSlide(); stopAutoSlide(); setTimeout(startAutoSlide, 8000); });
+            prevBtn.addEventListener('click', () => { prevSlide(); stopAutoSlide(); setTimeout(startAutoSlide, 8000); });
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => { currentSlide = i; updateSlider(); stopAutoSlide(); setTimeout(startAutoSlide, 8000); });
+            });
+
+            startAutoSlide();
+        }
+
+        // Mobile menu
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const hamburger = document.querySelector('.hamburger');
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        }
+
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const hamburger = document.querySelector('.hamburger');
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            initTheme();
+            initTypingEffect();
+            initCVInteractions();
+            initCertificationsSlider();
+            lucide.createIcons();
+
+            // Observe elements
+            document.querySelectorAll('.project-card, .skill-category, .timeline-item, .certification-card, .about-content, .contact-card').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Animate counters when hero is visible
+            const heroObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        heroObserver.unobserve(entry.target);
+                    }
+                });
+            });
+            heroObserver.observe(document.querySelector('.hero'));
+        });
+
+        // Resize handler
+        window.addEventListener('resize', () => { if (window.innerWidth > 768) closeMenu(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+    </script>
+</body>
+</html>
